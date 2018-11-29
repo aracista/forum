@@ -5,17 +5,18 @@
 <div class="row">
   <div class="col-md-8">
     <div class="card card-body bg-secondary">
-      <form action="{{route('forum.store')}}" method="POST" role="form">
+      <form action="{{route('forum.update',$forum->id)}}" method="POST" role="form">
+        @method('PUT')
         @csrf
         <fieldset>
           <legend class="text-center">Buat Pertanyaan</legend>
           <div class="form-group">
             <label for="title">Title :</label>
-            <input type="text" class="form-control" placeholder="Enter title" name="title">
+            <input type="text" class="form-control" name="title" value="{{$forum->title}}">
           </div>
           <div class="form-group">
             <label for="post">Post :</label>
-            <textarea class="form-control" rows="3" placeholder="tulis pertanyaan" name="post"></textarea>
+            <textarea class="form-control" rows="3" placeholder="tulis pertanyaan" name="post">{{$forum->post}}</textarea>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </fieldset>

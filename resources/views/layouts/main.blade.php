@@ -26,6 +26,7 @@
 
         <main class="py-4">
         	<div class="container">
+            @include('forum.include.flash')
             @yield('content')
         </div>
         </main>

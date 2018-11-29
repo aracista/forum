@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Forum;
+use App\Forum;
 
 class ForumController extends Controller
 {
@@ -14,7 +14,8 @@ class ForumController extends Controller
      */
     public function index()
     {
-        return view('forum.index');
+        $forum = Forum::all();
+        return view('forum.index',compact('forum'));
     }
 
     /**
@@ -35,7 +36,14 @@ class ForumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validasi
+        $this->validate($request,[
+            'title'=>'required',
+            'post'=>'required',
+        ]);
+
+        $forum = Forum::create($request->all());
+        return redirect()->route('forum.show', $forum->id)->withMessage('Berhasil');
     }
 
     /**
@@ -46,7 +54,9 @@ class ForumController extends Controller
      */
     public function show($id)
     {
-        //
+        $forum = Forum::find($id);
+
+        return view('forum.show', compact('forum'));
     }
 
     /**
@@ -57,7 +67,8 @@ class ForumController extends Controller
      */
     public function edit($id)
     {
-        //
+        $forum = Forum::find($id);
+        return view('forum.edit',compact('forum'));
     }
 
     /**
@@ -69,7 +80,15 @@ class ForumController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'title'=>'required',
+            'post'=>'required',
+        ]);
+        $forum = Forum::where('id',$id)->first();
+        $forum->title = $request['title'];
+        $forum->post = $request['post'];
+        $forum->update();
+        return redirect()->route('forum.show', $forum->id)->withMessage('Berhasil');
     }
 
     /**
