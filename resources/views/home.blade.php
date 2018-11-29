@@ -7,12 +7,13 @@
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Register</a>
   </p>
 </div>
 
 <div class="row">
     <div class="col-md-3">
+        <button type="button" class="btn btn-success btn-block">Buat pertanyaan</button><br>
         <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Cras justo odio
@@ -30,21 +31,90 @@
     </div>
     <div class="col-md-8">
         <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago</small>
+                    <small>by aracista 3 days ago</small>
                 </div>
                     <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small>Donec id elit non mi porta.</small>
+                    <br>
+                    <span class="badge badge-pill badge-primary">Primary</span>
+                    <span class="badge badge-pill badge-secondary">Secondary</span>
+                    <span class="badge badge-pill badge-success">Success</span>
+                    <span class="badge badge-pill badge-danger">Danger</span>
+                    <span class="badge badge-pill badge-warning">Warning</span>
+                    <span class="badge badge-pill badge-info">Info</span>
+                    <span class="badge badge-pill badge-light">Light</span>
+                    <span class="badge badge-pill badge-dark">Dark</span>
+
+            </a>
+           <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small>by aracista 3 days ago</small>
+                </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <br>
+                    <span class="badge badge-pill badge-primary">Primary</span>
+                    <span class="badge badge-pill badge-secondary">Secondary</span>
+                    <span class="badge badge-pill badge-success">Success</span>
+                    <span class="badge badge-pill badge-danger">Danger</span>
+                    <span class="badge badge-pill badge-warning">Warning</span>
+                    <span class="badge badge-pill badge-info">Info</span>
+                    <span class="badge badge-pill badge-light">Light</span>
+                    <span class="badge badge-pill badge-dark">Dark</span>
+
             </a>
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
+                    <small>by aracista 3 days ago</small>
                 </div>
                     <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small class="text-muted">Donec id elit non mi porta.</small>
+                    <br>
+                    <span class="badge badge-pill badge-primary">Primary</span>
+                    <span class="badge badge-pill badge-secondary">Secondary</span>
+                    <span class="badge badge-pill badge-success">Success</span>
+                    <span class="badge badge-pill badge-danger">Danger</span>
+                    <span class="badge badge-pill badge-warning">Warning</span>
+                    <span class="badge badge-pill badge-info">Info</span>
+                    <span class="badge badge-pill badge-light">Light</span>
+                    <span class="badge badge-pill badge-dark">Dark</span>
+
+            </a>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small>by aracista 3 days ago</small>
+                </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <br>
+                    <span class="badge badge-pill badge-primary">Primary</span>
+                    <span class="badge badge-pill badge-secondary">Secondary</span>
+                    <span class="badge badge-pill badge-success">Success</span>
+                    <span class="badge badge-pill badge-danger">Danger</span>
+                    <span class="badge badge-pill badge-warning">Warning</span>
+                    <span class="badge badge-pill badge-info">Info</span>
+                    <span class="badge badge-pill badge-light">Light</span>
+                    <span class="badge badge-pill badge-dark">Dark</span>
+
+            </a>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small>by aracista 3 days ago</small>
+                </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <br>
+                    <span class="badge badge-pill badge-primary">Primary</span>
+                    <span class="badge badge-pill badge-secondary">Secondary</span>
+                    <span class="badge badge-pill badge-success">Success</span>
+                    <span class="badge badge-pill badge-danger">Danger</span>
+                    <span class="badge badge-pill badge-warning">Warning</span>
+                    <span class="badge badge-pill badge-info">Info</span>
+                    <span class="badge badge-pill badge-light">Light</span>
+                    <span class="badge badge-pill badge-dark">Dark</span>
+
             </a>
         </div>
     </div>
