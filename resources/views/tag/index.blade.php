@@ -10,7 +10,8 @@
 		      <th scope="col">Nama</th>
 		      <th scope="col">Dibuat pada tanggal</th>
 		      <th scope="col">Diubah pada tanggal</th>
-		      <th scope="col">opsi</th>
+		      <th scope="col"></th>
+		      <th scope="col"></th>
 
 		    </tr>
 		  </thead>
@@ -23,9 +24,14 @@
 		      <td>{{$tag->nama}}</td>
 		      <td>{{date('j F Y',strtotime($tag->created_at))}}</td>
 		      <td>{{date('j F Y',strtotime($tag->updated_at))}}</td>
-		      <td><a href="{{route('tag.edit',$tag->id)}}" class="btn btn-success">Edit</a></td>
-
-
+		      <td><a href="{{route('tag.edit',$tag->id)}}" class="btn btn-success btn-sm">Edit</a></td>
+		      <td>
+		      <form action="{{route('tag.destroy',$tag->id)}}" method="post">
+		      	@method('DELETE')
+		      	@csrf
+		      	<input type="submit" value="Hapus" class="btn btn-danger btn-sm">
+		      </form>
+			  </td>
 		    </tr>
 		    @endforeach
 		  </tbody>

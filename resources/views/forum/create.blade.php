@@ -14,6 +14,13 @@
             <input type="text" class="form-control" placeholder="Enter title" name="title">
           </div>
           <div class="form-group">
+            <label for="title">Tag :</label>
+            <select class="form-control js-example-basic-multiple" id="select" multiple="multiple" name="tags[]">
+              @foreach($tags as $tag)
+              <option value="{{$tag->id}}">{{$tag->nama}}</option>
+              @endforeach
+            </select>
+          <div class="form-group">
             <label for="post">Post :</label>
             <textarea class="form-control" rows="3" placeholder="tulis pertanyaan" name="post"></textarea>
           </div>
@@ -32,4 +39,4 @@
   </div>
 </div>
 
-@endsection
+@stop

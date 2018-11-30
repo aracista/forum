@@ -10,4 +10,9 @@ class Forum extends Model
         'title', 'post',
     ];
 
+    public function tag()
+    {
+    	return $this->belongsToMany('App\Tag');
+    }
+
 }

@@ -20,7 +20,7 @@ class TagController extends Controller
         ]);
 
         $tag = Tag::create($request->all());
-        return redirect()->route('tag.index')->withMessage('Berhasil');
+        return redirect()->route('tag.index')->withMessage('Berhasil dibuat');
     }
 
     public function edit($id)
@@ -37,5 +37,12 @@ class TagController extends Controller
         $tags->nama = $request['nama'];
         $tags->update();
         return redirect()->route('tag.index')->withMessage('Update Berhasil !!');
+    }
+
+    public function destroy($id)
+    {
+    	$tags = Tag::find($id);
+    	$tags->delete();
+    	return redirect()->route('tag.index')->withMessage('Delete Berhasil !!');
     }
 }

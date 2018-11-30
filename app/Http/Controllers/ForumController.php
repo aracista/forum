@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Forum;
+use App\Tag;
 
 class ForumController extends Controller
 {
@@ -25,7 +26,8 @@ class ForumController extends Controller
      */
     public function create()
     {
-        return view('forum.create');
+        $tags = Tag::all();
+        return view('forum.create',compact('tags'));
     }
 
     /**
@@ -36,6 +38,7 @@ class ForumController extends Controller
      */
     public function store(Request $request)
     {
+        
         //validasi
         $this->validate($request,[
             'title'=>'required',
@@ -43,6 +46,8 @@ class ForumController extends Controller
         ]);
 
         $forum = Forum::create($request->all());
+
+        $forum->tag()->sync($request->tags);
         return redirect()->route('forum.show', $forum->id)->withMessage('Berhasil');
     }
 

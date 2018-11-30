@@ -9,12 +9,7 @@
 				<label for="nama">Nama Tag</label>
 				<input  type="text" name="nama" value="{{$tags->nama}}" id="nama" class="form-control">
 			</div>
-			<div class="form-group">
-				<input  class="btn btn-primary" type="submit" name="submit" value="Update">
-				<button href="{{route('tag.index')}}" class="btn btn-default" value="cancel">Cancel</button>
-			</div>
+				<button class="btn btn-primary" type="submit" name="submit">Update</button>
+				<a href="{{route('tag.index')}}" class="btn btn-secondary" value="cancel">Cancel</a>
 		</form>
-
-	
-
 @stop

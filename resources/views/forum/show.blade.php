@@ -16,14 +16,9 @@
 		</div>
 		<br>
 			<div class="card-block bg-secondary">
-				<span class="badge badge-pill badge-primary">Primary</span>
-                <span class="badge badge-pill badge-secondary">Secondary</span>
-                <span class="badge badge-pill badge-success">Success</span>
-                <span class="badge badge-pill badge-danger">Danger</span>
-                <span class="badge badge-pill badge-warning">Warning</span>
-                <span class="badge badge-pill badge-info">Info</span>
-                <span class="badge badge-pill badge-light">Light</span>
-                <span class="badge badge-pill badge-dark">Dark</span>
+				@foreach($forum->tag as $tag)
+				<span class="badge badge-pill badge-primary">{{$tag->nama}}</span>
+				@endforeach
                 <small class="float-right">by <a href="#">aracista &nbsp;</a>{{$forum->created_at->diffForHumans()}}</small>
             </div>
 	</div>
