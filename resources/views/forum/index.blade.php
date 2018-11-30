@@ -4,12 +4,14 @@
 
 <div class="row">
     <div class="col-md-3">
-        <button type="button" class="btn btn-success btn-block">Buat pertanyaan</button><br>
+        <a href="{{route('forum.create')}}" type="button" class="btn btn-success btn-block">Buat pertanyaan</a><br>
         @include('forum.include.tag')
     </div>
     <div class="col-md-8">
-       @include('forum.include.post-list')
-    </div>
+        @include('forum.include.post-list')
+        <div class="text-center">
+          {!! $forum->links() !!}
+        </div>
 </div>
 
 @endsection

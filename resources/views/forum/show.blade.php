@@ -30,6 +30,12 @@
 	<div class="col-md-4">
 		<a href="{{route('forum.edit', $forum->id)}}" class="btn btn-success btn-block">Edit</a>
 		<br>
+		<form action="{{route('forum.destroy', $forum->id)}}" method="post" accept-charset="utf-8">
+			@method('DELETE')
+			@csrf
+			<input type="submit" value="Hapus" class="btn btn-danger btn-block">
+		</form>
+		<br>
 		<div class="alert alert-dismissible alert-warning">
         	<button type="button" class="close" data-dismiss="alert">&times;</button>
           	<strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.

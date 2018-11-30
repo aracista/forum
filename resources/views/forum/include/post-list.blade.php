@@ -1,3 +1,5 @@
+<div class="card">
+  <h5 class="card-header">Hot Threads</h5>
     @foreach($forum as $forum)
         <div class="list-group">
             <a href="{{route('forum.show',$forum->id)}}" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -18,3 +20,4 @@
             </a>
         </div>
     @endforeach
+</div>

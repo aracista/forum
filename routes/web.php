@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$forum = App\Forum::orderBy('id','desc')->paginate(5);
+    return view('welcome',compact('forum'));
 });
 
 Auth::routes();

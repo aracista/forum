@@ -14,7 +14,7 @@ class ForumController extends Controller
      */
     public function index()
     {
-        $forum = Forum::all();
+        $forum = Forum::paginate(5);
         return view('forum.index',compact('forum'));
     }
 
@@ -99,6 +99,8 @@ class ForumController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $forum = Forum::find($id);
+        $forum->delete();
+        return redirect()->route('forum.index')->withMessage('Berhasil dihapus');
     }
 }

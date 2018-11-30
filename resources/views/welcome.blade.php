@@ -12,36 +12,14 @@
 </div>
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <a href="{{route('forum.create')}}" type="button" class="btn btn-success btn-block">Buat pertanyaan</a><br>
         @include('forum.include.tag')
     </div>
     <div class="col-md-8">
         @include('forum.include.post-list')
-        <div>
-          <ul class="pagination">
-            <li class="page-item disabled">
-              <a class="page-link" href="#">&laquo;</a>
-            </li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">4</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">5</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">&raquo;</a>
-            </li>
-          </ul>
+        <div class="text-center">
+          {{!! $forum->links() !!}}
         </div>
 
 </div>
