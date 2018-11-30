@@ -24,7 +24,7 @@
                 <span class="badge badge-pill badge-info">Info</span>
                 <span class="badge badge-pill badge-light">Light</span>
                 <span class="badge badge-pill badge-dark">Dark</span>
-                <small class="float-right">by <a href="#">aracista</a></small>
+                <small class="float-right">by <a href="#">aracista &nbsp;</a>{{$forum->created_at->diffForHumans()}}</small>
             </div>
 	</div>
 	<div class="col-md-4">

@@ -5,7 +5,7 @@
             <a href="{{route('forum.show',$forum->id)}}" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">{{$forum->title}}</h5>
-                    <small>by aracista 3 days ago</small>
+                    <small>by aracista {{$forum->created_at->diffForHumans()}}</small>
                 </div>
                     <p class="mb-1">{{$forum->post}}</p>
                     <br>
