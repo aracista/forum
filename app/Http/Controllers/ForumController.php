@@ -88,7 +88,7 @@ class ForumController extends Controller
         $forum->title = $request['title'];
         $forum->post = $request['post'];
         $forum->update();
-        return redirect()->route('forum.show', $forum->id)->withMessage('Berhasil');
+        return redirect()->route('forum.show', $forum->id)->withMessage('Berhasil !!');
     }
 
     /**
