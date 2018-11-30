@@ -23,7 +23,7 @@
 		      <td>{{$tag->nama}}</td>
 		      <td>{{date('j F Y',strtotime($tag->created_at))}}</td>
 		      <td>{{date('j F Y',strtotime($tag->updated_at))}}</td>
-		      <td></td>
+		      <td><a href="{{route('tag.edit',$tag->id)}}" class="btn btn-success">Edit</a></td>
 
 
 		    </tr>
