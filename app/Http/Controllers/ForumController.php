@@ -8,6 +8,10 @@ use App\Tag;
 
 class ForumController extends Controller
 {
+    function __construct()
+    {
+        return $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +19,7 @@ class ForumController extends Controller
      */
     public function index()
     {
-        $forum = Forum::paginate(5);
+        $forum = Forum::orderBy('id','desc')->paginate(5);
         return view('forum.index',compact('forum'));
     }
 
@@ -72,8 +76,10 @@ class ForumController extends Controller
      */
     public function edit($id)
     {
+
         $forum = Forum::find($id);
-        return view('forum.edit',compact('forum'));
+        $tags = Tag::all();
+        return view('forum.edit',compact('forum','tags'));
     }
 
     /**
@@ -93,6 +99,7 @@ class ForumController extends Controller
         $forum->title = $request['title'];
         $forum->post = $request['post'];
         $forum->update();
+        $forum->tag()->sync($request->tags);
         return redirect()->route('forum.show', $forum->id)->withMessage('Berhasil !!');
     }
 
