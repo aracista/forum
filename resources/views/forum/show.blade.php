@@ -23,6 +23,7 @@
             </div>
 	</div>
 	<div class="col-md-4">
+		@if(auth()->user()->id== $forum->user_id)
 		<a href="{{route('forum.edit', $forum->id)}}" class="btn btn-success btn-block">Edit</a>
 		<br>
 		<form action="{{route('forum.destroy', $forum->id)}}" method="post" accept-charset="utf-8">
@@ -30,6 +31,7 @@
 			@csrf
 			<input type="submit" value="Hapus" class="btn btn-danger btn-block">
 		</form>
+		@endif
 		<br>
 		<div class="alert alert-dismissible alert-warning">
         	<button type="button" class="close" data-dismiss="alert">&times;</button>

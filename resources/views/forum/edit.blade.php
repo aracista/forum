@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-
+@if(auth()->user()->id== $forum->user_id)
 <div class="row">
   <div class="col-md-8">
     <div class="card card-body bg-secondary">
@@ -40,7 +40,12 @@
       </div>
   </div>
 </div>
+@else
+<script type="text/javascript">
+  window.location = "/";
 
+</script>
+@endif
 @endsection
 @section('script')
 <script>

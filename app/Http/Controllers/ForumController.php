@@ -10,7 +10,7 @@ class ForumController extends Controller
 {
     function __construct()
     {
-        return $this->middleware('auth');
+        return $this->middleware('auth')->except('index');
     }
     /**
      * Display a listing of the resource.
@@ -49,7 +49,14 @@ class ForumController extends Controller
             'post'=>'required',
         ]);
 
-        $forum = Forum::create($request->all());
+        $forum = new Forum;
+
+        $forum->title  = $request->title;
+        $forum->post   = $request->post;
+        $forum->user_id     = auth()->id();
+
+
+        $forum->save();
 
         $forum->tag()->sync($request->tags);
         return redirect()->route('forum.show', $forum->id)->withMessage('Berhasil');
