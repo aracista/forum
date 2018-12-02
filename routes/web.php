@@ -13,7 +13,8 @@
 
 Route::get('/', function () {
 	$forum = App\Forum::orderBy('id','desc')->paginate(5);
-    return view('welcome',compact('forum'));
+	$tag = App\Tag::all();
+    return view('welcome',compact('forum','tag'));
 });
 
 Auth::routes();
