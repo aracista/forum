@@ -83,10 +83,10 @@ class ForumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
 
-        $forum = Forum::find($id);
+        $forum = Forum::where('slug','=',$slug);
         $tags = Tag::all();
         return view('forum.edit',compact('forum','tags'));
     }
@@ -98,18 +98,18 @@ class ForumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
         $this->validate($request,[
             'title'=>'required',
             'post'=>'required',
         ]);
-        $forum = Forum::where('id',$id)->first();
+        $forum = Forum::where('slug','=',$slug)->first();
         $forum->title = $request['title'];
         $forum->post = $request['post'];
         $forum->update();
         $forum->tag()->sync($request->tags);
-        return redirect()->route('forum.show', $forum->id)->withMessage('Berhasil !!');
+        return redirect()->route('forum.show', $forum->slug)->withMessage('Berhasil !!');
     }
 
     /**
@@ -118,9 +118,9 @@ class ForumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        $forum = Forum::find($id);
+        $forum = Forum::where('slug','=',$slug);
         $forum->delete();
         return redirect()->route('forum.index')->withMessage('Berhasil dihapus');
     }
