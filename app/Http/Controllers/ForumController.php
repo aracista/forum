@@ -20,7 +20,8 @@ class ForumController extends Controller
     public function index()
     {
         $forum = Forum::orderBy('id','desc')->paginate(5);
-        return view('forum.index',compact('forum'));
+        $tag = Tag::all();
+        return view('forum.index',compact('forum','tag'));
     }
 
     /**
@@ -52,6 +53,7 @@ class ForumController extends Controller
         $forum = new Forum;
 
         $forum->title  = $request->title;
+        $forum->slug   = str_slug($forum->title);
         $forum->post   = $request->post;
         $forum->user_id     = auth()->id();
 
@@ -68,9 +70,9 @@ class ForumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $forum = Forum::find($id);
+        $forum = Forum::where('slug','=',$slug)->first();
 
         return view('forum.show', compact('forum'));
     }

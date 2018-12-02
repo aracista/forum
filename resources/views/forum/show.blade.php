@@ -22,16 +22,17 @@
 		    <p class="card-text float-right">By &nbsp;<a href="#">{{$forum->user->name}}a &nbsp;</a>{{$forum->created_at->diffForHumans()}}</p>
 		  </div>
 		</div>
+		<hr>
              @foreach($forum->comments as $comment)
 			<div class="card border-primary mb-3">
 			  <div class="card-body">
 			    <h5 class="card-title">{{$comment->isi_komentar}}</h5>
-			    <p class="card-text float-right">{{$comment->user->name}}</p>
+			    <small class="card-text float-right">{{$comment->user->name}}</small>
 			  </div>
 			</div>
             @endforeach
 
-
+            <hr>
             <form action="{{route('buatKomentar.store',$forum->id)}}" method="post">
             	@csrf
             	<div class="from-group">
