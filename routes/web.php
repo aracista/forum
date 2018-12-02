@@ -22,3 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('forum', 'ForumController');
 Route::resource('tag', 'TagController');
+Route::resource('comment', 'CommentController');
+
+Route::post('comment/create/{forum}', 'CommentController@buatKomentar')->name('buatKomentar.store');

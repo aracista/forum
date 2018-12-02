@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="https://bootswatch.com/4/lumen/bootstrap.min.css" rel="stylesheet">
+    <link href="https://bootswatch.com/4/journal/bootstrap.min.css" rel="stylesheet">
     
 </head>
 <body>
