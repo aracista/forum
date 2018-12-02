@@ -5,7 +5,7 @@
 <div class="row">
   <div class="col-md-8">
     <div class="card card-body bg-secondary">
-      <form action="{{route('forum.update',$forum->id)}}" method="POST" role="form">
+      <form action="{{route('forum.update',$forum->slug)}}" method="POST" role="form">
         @method('PUT')
         @csrf
         <fieldset>
