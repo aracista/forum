@@ -98,13 +98,13 @@ class ForumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $slug)
+    public function update(Request $request, $id)
     {
         $this->validate($request,[
             'title'=>'required',
             'post'=>'required',
         ]);
-        $forum = Forum::where('slug','=',$slug)->first();
+        $forum = Forum::where('id',$id)->first();
         $forum->title = $request['title'];
         $forum->post = $request['post'];
         $forum->update();
@@ -118,9 +118,9 @@ class ForumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($slug)
+    public function destroy($id)
     {
-        $forum = Forum::where('slug','=',$slug);
+        $forum = Forum::find($id);
         $forum->delete();
         return redirect()->route('forum.index')->withMessage('Berhasil dihapus');
     }

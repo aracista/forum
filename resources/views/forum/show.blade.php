@@ -19,7 +19,7 @@
 		    <p class="card-title">
 		    	{{$forum->post}}
 		    </p>
-		    <p class="card-text float-right">By &nbsp;<a href="#">{{$forum->user->name}}a &nbsp;</a>{{$forum->created_at->diffForHumans()}}</p>
+		    <p class="card-text float-right">By &nbsp;<a href="#">{{$forum->user->name}} &nbsp;</a>{{$forum->created_at->diffForHumans()}}</p>
 		  </div>
 		</div>
 		<hr>
