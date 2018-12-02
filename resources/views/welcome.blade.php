@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="jumbotron">
-  <h1 class="display-3">Hello, jing</h1>
+  <h1 class="display-3">Hello</h1>
   <p class="lead">ini forum-foruman buat ngetes hosting</p>
   <hr class="my-4">
   <p>jgn ngarep fitur lebih ......</p>
