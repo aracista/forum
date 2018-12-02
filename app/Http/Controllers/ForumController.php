@@ -61,7 +61,7 @@ class ForumController extends Controller
         $forum->save();
 
         $forum->tag()->sync($request->tags);
-        return redirect()->route('forum.show', $forum->id)->withMessage('Berhasil');
+        return redirect()->route('forum.show', $forum->slug)->withMessage('Berhasil');
     }
 
     /**
